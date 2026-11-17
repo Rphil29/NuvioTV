@@ -537,14 +537,15 @@ internal fun ModernRowSection(
             } else Modifier
         )
     ) {
-        val titleMediumStyle = MaterialTheme.typography.titleMedium
-        val rowTitleStyle = remember(titleMediumStyle) {
-            titleMediumStyle.copy(fontWeight = FontWeight.SemiBold)
+        // Netflix-inspired hierarchy: larger, bolder row headings with consistent alignment.
+        val titleLargeStyle = MaterialTheme.typography.titleLarge
+        val rowTitleStyle = remember(titleLargeStyle) {
+            titleLargeStyle.copy(fontWeight = FontWeight.Bold)
         }
         val rowTitle = row.title
         val textColor = NuvioTheme.colors.TextPrimary
         val textModifier = remember(rowTitleBottom) {
-            Modifier.padding(start = 52.dp, bottom = rowTitleBottom)
+            Modifier.padding(start = 56.dp, bottom = rowTitleBottom + 3.dp)
         }
         Text(
             text = rowTitle,
