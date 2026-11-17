@@ -177,7 +177,7 @@ android {
         buildConfigField("String", "SENTRY_DSN", buildConfigString(sentryDsn))
 
         // In-app updater (GitHub Releases)
-        buildConfigField("String", "GITHUB_OWNER", "\"NuvioMedia\"")
+        buildConfigField("String", "GITHUB_OWNER", "\"Rphil29\"")
         buildConfigField("String", "GITHUB_REPO", "\"NuvioTV\"")
     }
 
@@ -223,6 +223,8 @@ android {
 
     buildTypes {
         debug {
+            // Keep preview builds installable next to the official Nuvio app.
+            applicationIdSuffix = ".preview"
             signingConfig = signingConfigs.getByName("release")
             isDebuggable = parseBooleanProperty(providers.gradleProperty("debuggable").orNull)
             isMinifyEnabled = false
