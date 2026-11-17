@@ -373,8 +373,8 @@ private fun HeroTitleContent(
     val headlineLarge = MaterialTheme.typography.headlineLarge
     val labelMedium = MaterialTheme.typography.labelMedium
     val bodyMedium = MaterialTheme.typography.bodyMedium
-    val logoMaxWidthPx = remember(density) { with(density) { 220.dp.roundToPx() } }
-    val logoHeightPx = remember(density) { with(density) { 100.dp.roundToPx() } }
+    val logoMaxWidthPx = remember(density) { with(density) { 300.dp.roundToPx() } }
+    val logoHeightPx = remember(density) { with(density) { 124.dp.roundToPx() } }
 
     val logoModel = remember(context, preview.logo, logoMaxWidthPx, logoHeightPx) {
         preview.logo?.let {
@@ -418,8 +418,8 @@ private fun HeroTitleContent(
                 contentDescription = preview.title,
                 onError = { logoLoadFailed = true },
                 modifier = Modifier
-                    .height(100.dp)
-                    .widthIn(min = 100.dp, max = 220.dp)
+                    .height(124.dp)
+                    .widthIn(min = 120.dp, max = 300.dp)
                     .fillMaxWidth(),
                 contentScale = ContentScale.Fit,
                 alignment = Alignment.CenterStart
